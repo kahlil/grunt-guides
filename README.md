@@ -1,3 +1,3 @@
 # grunt-guides
 
-Scripts for the grunt-guides.
+Scripts for the Grunt Guides.
