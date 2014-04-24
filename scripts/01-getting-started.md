@@ -1,4 +1,5 @@
-# Grunt Guides: Getting Started
+# Grunt Guides
+# 01 Getting Started
 
 Hi my name is Kahlil. Welcome to Grunt Guides. In this guide I will show you how you can get up and running with Grunt in just a few minutes.
 
@@ -139,10 +140,40 @@ grunt.initConfig({
 ```
 Next we will change the configuration according to the needs of our project. We first want all our lib files and then our main.js file concatenated. Luckily you can use the star symbol as a wildcard like this.
 
-Now we have to tell Grunt to load the plugin with `grunt.loadNpmTasks('grunt-contrib-concat')`.
+Now we have to tell Grunt where to find the plugin with `grunt.loadNpmTasks('grunt-contrib-concat')`. The contents of your Gruntfile end up looking like this:
+
+```js
+module.exports = function(grunt) {
+
+  // Project configuration.
+  grunt.initConfig({
+    concat: {
+      files: [
+        'js/libs/*.js',
+        'main.js'
+      ],
+      dest: 'js/prod/main.js'
+    }
+  });
+
+  grunt.loadNpmTasks('grunt-contrib-concat');
+};
+```
+
+Now the task is configured and we are all set to execute it!
 
 ## Execute!
 
-Ok now we are all set to execute our first Grunt task. Type in `grunt concat` into the terminal and watch what happens.
+Type in `grunt concat` into the terminal and watch what happens.
 
-Grunt gives us a pretty output about what it is doing. Grunt says it executed the concat task and created a new file in js/prod called main.js
+Grunt gives us a pretty output about what it is doing. Grunt says it executed the concat task and created a new file in js/prod called main.js.
+
+## Errors
+
+If you get an error in the console just go ahead and read it carefully. Often it just means that the configuration in the Gruntfile was not properly formatted. In this example I missed a comma for instance.
+
+## Next Steps
+
+Awesome you configured your first Grunt task and executed it! I hope you can feel all that power at your fingertips now and ar excited about the ways that Grunt can help you!
+
+In the upcomming Grunt Guides I will show you how to configure more tasks for your project. Please go to gruntjs.com/grunt-guides to find more guides and follow us on Twitter @gruntjs.
