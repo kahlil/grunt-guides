@@ -1,7 +1,7 @@
 # Grunt Guides
 # 01 Getting Started
 
-Hi my name is Kahlil. Welcome to Grunt Guides. In this guide I will show you how you can get up and running with Grunt in just a few minutes.
+Welcome to Grunt Guides. In this guide I will show you how you can get up and running with Grunt in just a few minutes.
 
 ## Grunt
 
@@ -13,15 +13,15 @@ In order to install Grunt we need to install Node.js and npm first.
 
 ## Node & npm
 
-Node.js is a platform that allows us to run JavaScript files right on our computer. You don't have to know anything about it in order to run Grunt.js but you can find out more on http://nodejs.org.
+Node.js is a platform that allows you to run JavaScript files right on your computer. You don't have to know anything about it in order to run Grunt.js but you can find out more at nodejs.org.
 
 npm is installed with Node by default. It is a command line tool that allows you to install small programs that run on the Node platform like Grunt and the Grunt plugins we will need later on.
 
-If you want to find out more about npm you can go to http://npmjs.org. No further knowledge about npm is required to get started with Grunt.
+If you want to find out more about npm you can go to npmjs.org but no further knowledge about npm is required to get started with Grunt.
 
 ### Install Node & npm
 
-Installing Node and npm is very easy just go to http://nodejs.org and click on the big Install button. This will download an installer that you then can use to install Node. npm is installed next to Node by default.
+Installing Node and npm is very easy just go to  nodejs.org and click on the big Install button. This will download an installer that you then can use to install Node. npm is installed next to Node by default.
 
 That's it, you're done.
 
@@ -78,8 +78,7 @@ Just type
 npm grunt install --save-dev
 ```
 
-into the command line.
-When you look into your project folder you will be able to notice two things:
+into the command line and hit return. After the installation is done and you look into your project folder you will be able to notice two things:
 
 1. a new folder appeared in the directory called node_modules this is where all the programs (which also called "packages") you install with npm are stored. This is all you need to know. You don't have to touch that folder at all.
 
@@ -96,7 +95,7 @@ We will make sure that all the Grunt plugins will be automatically added to the 
 
 ## grunt-cli
 
-In order to be able to run Grunt from the terminal we need to install a little tool called grunt-cli. "cli" stands for "comand line interface". This program only needs to be installed once. It is installed globally and it allows you to run the Grunt installation in your project directory.
+In order to be able to run Grunt from the terminal we need to install a little tool called grunt-cli. "cli" stands for "comand line interface". This program only needs to be installed once. It is installed globally so it is available on your computer everywhere and it is used to actually run the Grunt installation that we just installed in your project directory locally. This just means that every project can use a different version of Grunt locally without worry.
 
 Just type
 
@@ -117,13 +116,13 @@ npm install grunt-contrib-concat --save-dev
 ```
 into the command line.
 
-Once the install is done you can head over to ... and download the sample project folder. It contains a js folder that has a libs folder that contains some libraries and a main.js file that contains custom code.
+Once the install is done go ahead and download the  sample project zip folder via the link underneath this video. Unzip it and copy the contents to your project folder. It contains a folder called "js" which contains a file called "main.js" with custom code and a "libs" folder that contains some libraries.
 
-It is our goal to concatenate all our files together to one file. Libraries first, then the main.js.
+It is our goal to concatenate all our files together to one file. Libraries first, then the "main.js".
 
 ## The Gruntfile
 
-In order to tell Grunt to do that we have to create a file called Gruntfile.js. That file will contain our task configurations. When we call Grunt on the command line later it will load that file in order to find out what to do.
+In order to tell Grunt to do that we have to create a file named Gruntfile.js also just called "Gruntfile". That file will contain our task configurations. When we call Grunt on the command line later it will load that file in order to find out what to do.
 
 First copy and paste this piece of code into your Gruntfile.
 
@@ -139,9 +138,9 @@ This is the boilerplate code we need to make the configuration accessible to Gru
 
 Next we will go to the Github page of grunt-contrib-concat and figure out how to configure the plugin.
 
-The easiest way to find out how to configure a Grunt plugin is to look for the basic example on it's GitHub page README file.
+The easiest way to find out how to configure a Grunt plugin is to look for the usage example on it's GitHub README file.
 
-Once you found it, copy the part of the example that is in between the curly braces in the 'initConfig' function and head over to your Gruntfile. Paste the configuration right into your `initConfig` like this.
+Once you found it, copy the part of the example that is in between the curly braces in the 'initConfig' function and head over to your Gruntfile. Paste that configuration right into your `initConfig` like this.
 
 ```js
 // Project configuration.
@@ -175,7 +174,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
 };
 ```
-
 Now the task is configured and we are all set to execute it!
 
 ## Execute!
@@ -183,6 +181,8 @@ Now the task is configured and we are all set to execute it!
 Type `grunt concat` into the terminal and watch what happens.
 
 Grunt gives us a pretty output about what it is doing. Grunt says it executed the concat task and created a new file in js/prod called main.js.
+
+If you open that file in editor like this you will see that all the files have been put together to one single file.
 
 ## Errors
 
