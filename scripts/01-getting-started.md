@@ -5,7 +5,7 @@ Welcome to Grunt Guides. In this guide I will show you how you can get up and ru
 
 ## Grunt
 
-Grunt is a "JavaScript Task Runner". "Tasks" are small file operations that you might want to do as a front-end developer or designer when you build a website. For instance, once you are done programming your CSS or JavaScript you might want to concatenate all your files so that you only have to serve one single file once you go live.
+Grunt is a "JavaScript Task Runner". "Tasks" are small file operations that you might want to do as a front-end developer or designer when you build a website. For instance, once you are done programming your CSS or JavaScript you might want to concatenate all your files so that you only have one file to serve as you go live.
 
 This is just one of many different tasks you can use Grunt for, but let's start at the beginning.
 
@@ -15,7 +15,7 @@ In order to install Grunt we need to install Node.js and npm first.
 
 Node.js is a platform that allows you to run JavaScript files right on your computer. You don't have to know anything about it in order to run Grunt.js but you can find out more at nodejs.org.
 
-npm is installed with Node by default. It is a command line tool that allows you to install small programs that run on the Node platform like Grunt and the Grunt plugins we will need later on.
+npm is installed with Node by default. It is a command line tool that allows you to install small programs that run on the Node platform like Grunt and the Grunt plugins.
 
 If you want to find out more about npm you can go to npmjs.org but no further knowledge about npm is required to get started with Grunt.
 
@@ -192,4 +192,6 @@ If you get an error in the console just go ahead and read it carefully. Often it
 
 Awesome you configured your first Grunt task and executed it! I hope you can feel all that power at your fingertips now and are excited about the ways that Grunt can help you!
 
-In the upcoming Grunt Guides I will show you how to configure more tasks for your project. Please go to gruntjs.com/grunt-guides to find more guides and follow us on Twitter @gruntjs.
+In the upcoming Grunt Guides I will show you how to configure more tasks for your project. Please check out gruntjs.com for more info and follow us on Twitter @gruntjs.
+
+Thanks for watching this Grunt Guide. My name is Kahlil and I'd love to hear from you if you have any feedback for this guide. You can reach me on Twitter via my handle @distilledhype or send me an email to hello@kahlil.co.

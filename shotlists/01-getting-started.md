@@ -1,0 +1,37 @@
+# Shotlist Grunt Guides
+## 01 Getting Started
+
+- Intro slide
+- Grunt website highlight "JavaScript Task Runner"
+- Grunt website highlight "Task"
+- nodejs.org website highlight description
+- npmjs.org website
+- Click Node.js INSTALL button
+- Show command line
+- Show cd + drag and drop
+- Show cd + type path
+- Create package.json in editor
+- Copy and paste snippet into package.json
+- Change name in package.json
+- Install Grunt locally
+- Show node_modules folder
+- Show new entry in package.json
+- Show grunt-cli npm page
+- Install grunt-cli
+- Install concat plugin
+- Download sample project zip file
+- Unzip and add to project
+- Show file structure
+- Create Gruntfile.js
+- Copy and paste Gruntfile boilerplate snippet
+- Show concat Github page
+- Show usage example
+- Copy and paste usage example into Gruntfile
+- Change configuration according to needs of project
+- add loadNpmTasks call
+- Show full Gruntfile
+- Execute grunt concat
+- Show Grunt output
+- Show concatenated file
+- Make an error in Grunfile + console output
+- fix error
