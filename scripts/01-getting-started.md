@@ -5,7 +5,7 @@ Welcome to Grunt Guides. In this guide I will show you how you can get up and ru
 
 ## Grunt
 
-Grunt is a "JavaScript Task Runner". "Tasks" are small file operations that you might want to do as a front-end developer or designer when you build a website. For instance, once you are done programming your CSS or JavaScript you might want to concatenate all your files so that you only have one file to serve as you go live.
+Grunt is a "JavaScript Task Runner". "Tasks" are small file operations that you might want to do as a front-end developer or designer when you build a website. For instance, once you are done programming your CSS you might want to concatenate all your files so that you only have one file to serve as you go live.
 
 This is just one of many different tasks you can use Grunt for, but let's start at the beginning.
 
@@ -13,7 +13,7 @@ In order to install Grunt we need to install Node.js and npm first.
 
 ## Node & npm
 
-Node.js is a platform that allows you to run JavaScript files right on your computer. You don't have to know anything about it in order to run Grunt.js but you can find out more at nodejs.org.
+Node.js is a platform that allows you to run JavaScript files right on your computer. You don't have to know anything about it in order to run Grunt.js but you can find out more about it if you're interested at nodejs.org.
 
 npm is installed with Node by default. It is a command line tool that allows you to install small programs that run on the Node platform like Grunt and the Grunt plugins.
 
@@ -27,7 +27,7 @@ That's it, you're done.
 
 ## The Terminal
 
-Grunt needs to be installed and run from the command line, but there are only a couple of very simple commands needed to do that. You won't have to learn how to be a command-line Ninja in order to use Grunt, all you need to know is to type a few words,  or where to look to find the right command. You can also always come back to this guide at any time and copy and paste them.
+Grunt needs to be installed and run from the command line, but there are only a couple of very simple commands needed to do that. You won't have to learn how to be a command-line pro in order to use Grunt, all you need to know is to type a few words, or where to look to find the right command. You can also always come back to this guide at any time and copy and paste them.
 
 ## Open the your project folder in the terminal
 
@@ -47,11 +47,11 @@ On Windows you will have to open cmd.exe and then type in
 cd path\to\project\directory
 ```
 
-and hit return to change into your project directory.
+and hit return to change into your project folder.
 
 ## Create a package.json File
 
-Open your project folder in your favorite editor and create a new file called package.json.
+Open your project folder in your favorite text  editor and create a new file called package.json.
 
 This file will store all the names of the programs that you will install with the `npm` command.
 
