@@ -21,9 +21,7 @@ If you want to find out more about npm you can go to npmjs.org but no further kn
 
 ### Install Node & npm
 
-Installing Node and npm is very easy just go to  nodejs.org and click on the big Install button. This will download an installer that you then can use to install Node. npm is installed next to Node by default.
-
-That's it, you're done.
+Installing Node and npm is very easy just go to nodejs.org and click on the big Install button. This will download an installer that you then can use to install Node. npm is installed next to Node by default.
 
 ## The Terminal
 
@@ -39,7 +37,7 @@ On the Mac you can just type
 cd
 ```
 
-(it's short for change directory) into the command line and then drag and drop the project folder on to the terminal window. This will add the path of the project directory next to the `cd` you just typed. Hit return and you have changed to your project folder.
+into the command line and then drag and drop the project folder on to the terminal window. This will add the path of the project directory next to the `cd` you just typed. Hit return and you have changed to your project folder.
 
 On Windows you will have to open cmd.exe and then type in
 
@@ -51,9 +49,10 @@ and hit return to change into your project folder.
 
 ## Create a package.json File
 
-Open your project folder in your favorite text  editor and create a new file called package.json.
+Next, we have to create a package.json file.
+Open your project folder in your favorite text editor and create a new file called package.json.
 
-This file will store all the names of the programs that you will install with the `npm` command.
+This file will store all the names and version numbers of the programs that you will install with the `npm` command.
 
 You can optionally also keep meta data in there like the project name and a version number and later on use that data in Grunt tasks.
 
@@ -66,13 +65,13 @@ But for now all you need to know is that you need to copy and paste this little 
 }
 ```
 
-You can change the name into anything you want, just make sure it is URL-friendly.
+You can change the name-value into anything you want, just make sure it is URL-friendly.
 
 ## Install grunt Locally In Your Project Folder
 
 Next we need to install Grunt locally for this project and store it's name and it's version in the package.json.
 
-Just type
+To do this just type
 
 ```sh
 npm grunt install --save-dev
@@ -80,7 +79,7 @@ npm grunt install --save-dev
 
 into the command line and hit return. After the installation is done and you look into your project folder you will be able to notice two things:
 
-1. a new folder appeared in the directory called node_modules this is where all the programs (which also called "packages") you install with npm are stored. This is all you need to know. You don't have to touch that folder at all.
+1. a new folder appeared in the directory called "node_modules" this is where all the programs (which are also called "packages") you install with npm are stored. This is all you need to know. You don't have to touch that folder at all.
 
 2. the package.json file now has a new entry:
 
@@ -89,20 +88,20 @@ devDependencies: {
 	grunt: "~0.4.0"
 }
 ```
-
-We will make sure that all the Grunt plugins will be automatically added to the package.json later on as well. This is useful because if you want to use the same Grunt setup later on in a different project you can just copy the package.json file and type `npm install` into the command line in order to install Grunt and all the Grunt plugins at once.
+As you can see Grunt is stored in the package.json as a "development dependency".
+We will make sure that all the Grunt plugins will be automatically added to the package.json as development dependencies later on as well. This is useful because if you want to use the same Grunt setup later on in a different project you can just copy the package.json file and type `npm install` into the command line in order to install Grunt and all the Grunt plugins in one go.
 
 
 ## grunt-cli
 
-In order to be able to run Grunt from the terminal we need to install a little tool called grunt-cli. "cli" stands for "comand line interface". This program only needs to be installed once. It is installed globally so it is available on your computer everywhere and it is used to actually run the Grunt installation that we just installed in your project directory locally. This just means that every project can use a different version of Grunt locally without worry.
+In order to be able to run Grunt from the terminal we need to install a little tool called grunt-cli. "cli" stands for "comand line interface". This program only needs to be installed once. It is installed globally so it is available on your computer everywhere. grunt-cli is used to actually run the Grunt installation that we just installed in your project directory locally. This just means that each project can use a different version of Grunt locally without worry.
 
-Just type
+Type
 
 ```sh
 npm install -g grunt-cli
 ```
-into your terminal and hit return.
+into the command line and hit return.
 
 
 ## Installing a Grunt plugin
@@ -116,7 +115,7 @@ npm install grunt-contrib-concat --save-dev
 ```
 into the command line.
 
-Once the install is done go ahead and download the  sample project zip folder via the link underneath this video. Unzip it and copy the contents to your project folder. It contains a folder called "js" which contains a file called "main.js" with custom code and a "libs" folder that contains some libraries.
+Once the install is done go ahead and download the  sample project zip folder via the link underneath this video. Unzip it and copy the contents to your project folder. It contains a folder called "js" which contains a file called "main.js" with custom code and a "libs" folder that contains some JavaScript libraries.
 
 It is our goal to concatenate all our files together to one file. Libraries first, then the "main.js".
 
@@ -138,9 +137,9 @@ This is the boilerplate code we need to make the configuration accessible to Gru
 
 Next we will go to the Github page of grunt-contrib-concat and figure out how to configure the plugin.
 
-The easiest way to find out how to configure a Grunt plugin is to look for the usage example on it's GitHub README file.
+The easiest way to find out how to configure a Grunt plugin is to look for the "usage example" on it's GitHub README file.
 
-Once you found it, copy the part of the example that is in between the curly braces in the 'initConfig' function and head over to your Gruntfile. Paste that configuration right into your `initConfig` like this.
+Once you found it, copy the part of the example that is in between the curly braces in the 'initConfig' function and head back over to your Gruntfile. Paste that configuration right into your `initConfig` like this.
 
 ```js
 // Project configuration.
@@ -156,7 +155,11 @@ grunt.initConfig({
 ```
 Next we will change the configuration according to the needs of our project. We first want all our lib files and then our main.js file concatenated. Luckily you can use the star symbol as a wildcard like this.
 
-Now we have to tell Grunt where to find the plugin with `grunt.loadNpmTasks('grunt-contrib-concat')`. The contents of your Gruntfile end up looking like this:
+```js
+'js/libs/*.js',
+```
+
+Now we have to tell Grunt to load the plugin for use with `grunt.loadNpmTasks('grunt-contrib-concat')`. The contents of your Gruntfile end up looking like this:
 
 ```js
 module.exports = function(grunt) {
@@ -180,18 +183,22 @@ Now the task is configured and we are all set to execute it!
 
 Type `grunt concat` into the terminal and watch what happens.
 
-Grunt gives us a pretty output about what it is doing. Grunt says it executed the concat task and created a new file in js/prod called main.js.
+Grunt gives us a pretty output about what it is doing. Grunt says it executed the concat task and created a new file in `js/prod` called "main.js".
 
-If you open that file in editor like this you will see that all the files have been put together to one single file.
+If you open that file in an editor you will see that all the files have been put together to one single file.
 
 ## Errors
 
-If you get an error in the console just go ahead and read it carefully. Often it just means that the configuration in the Gruntfile was not properly formatted. In this example I missed a comma for instance.
+If you get an error in the console just go ahead and read the output carefully. Often it just means that the configuration in the Gruntfile was not properly formatted. In this example I missed a comma for instance.
 
 ## Next Steps
 
-Awesome you configured your first Grunt task and executed it! I hope you can feel all that power at your fingertips now and are excited about the ways that Grunt can help you!
+Congratulations, you configured your first Grunt task and executed it!
 
-In the upcoming Grunt Guides I will show you how to configure more tasks for your project. Please check out gruntjs.com for more info and follow us on Twitter @gruntjs.
+I hope you can feel all that power at your fingertips now and are excited about the many ways that Grunt can help you!
+
+In the upcoming Grunt Guides I will show you how to configure more tasks for your project.
 
 Thanks for watching this Grunt Guide. My name is Kahlil and I'd love to hear from you if you have any feedback for this guide. You can reach me on Twitter via my handle @distilledhype or send me an email to hello@kahlil.co.
+
+Please check out gruntjs.com for more info and follow us on Twitter @gruntjs.
